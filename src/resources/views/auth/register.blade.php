@@ -46,51 +46,48 @@
             </div>
 
             <form action="/register" method="POST" class="space-y-5">
-                <!-- @csrf -->
-                <div class="grid grid-cols-2 gap-4">
+               @csrf 
+                <div class="w-full">
                     <div>
-                        <label for="first_name" class="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                        <input type="text" id="first_name" name="first_name" required
+                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+                        <input type="text" id="name" name="name" value="{{ old('name')}}"
                             class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400"
                             placeholder="John">
                     </div>
-                    <div>
-                        <label for="last_name" class="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                        <input type="text" id="last_name" name="last_name" required
-                            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400"
-                            placeholder="Doe">
-                    </div>
+                    @error('name')
+                    <p class="mt-1 text-sm text-red-600">{{ $message  }}</p>
+                    @enderror
                 </div>
 
                 <div>
                     <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
-                    <input type="email" id="email" name="email" required
+                    <input type="email" id="email" name="email" value="{{ old('email')}}"
                         class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400"
                         placeholder="john@example.com">
+                     @error('email')
+                    <p class="mt-1 text-sm text-red-600">{{ $message  }}</p>
+                    @enderror
                 </div>
 
                 <div>
                     <label for="password" class="block text-sm font-medium text-slate-700 mb-1">Password</label>
-                    <input type="password" id="password" name="password" required
+                    <input type="password" id="password" name="password" 
                         class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400"
                         placeholder="••••••••">
+                    
+                   
                 </div>
 
                 <div>
                     <label for="password_confirmation" class="block text-sm font-medium text-slate-700 mb-1">Confirm Password</label>
-                    <input type="password" id="password_confirmation" name="password_confirmation" required
+                    <input type="password" id="password_confirmation" name="password_confirmation" 
                         class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400"
                         placeholder="••••••••">
+                        @error('password')
+                      <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                      @enderror
                 </div>
 
-                <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                        <input id="terms" name="terms" type="checkbox" required class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-slate-300 rounded">
-                    </div>
-                    <div class="ml-3 text-sm">
-                        <label for="terms" class="font-medium text-slate-700">I agree to the <span class="text-indigo-600">Terms of Service</span> and <span class="text-indigo-600">Privacy Policy</span></label>
-                    </div>
-                </div>
 
                 <button type="submit" 
                     class="w-full py-4 bg-indigo-600 text-white font-bold rounded-xl shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all transform active:scale-[0.98]">
@@ -98,10 +95,7 @@
                 </button>
             </form>
 
-            <p class="mt-8 text-center text-sm text-slate-500">
-                Already have an account? 
-                <a href="/login" class="font-bold text-indigo-600 hover:text-indigo-500">Sign in instead</a>
-            </p>
+        
         </div>
     </div>
 </div>
