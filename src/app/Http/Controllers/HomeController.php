@@ -12,7 +12,7 @@ class HomeController extends Controller
     
     }
     public function question(){
-     return view('questions.index');
+     return view('questions.show');
 
     }
 }
