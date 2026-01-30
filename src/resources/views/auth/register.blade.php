@@ -4,7 +4,6 @@
 
 @section('content')
 <div class="min-h-[calc(100vh-64px)] flex flex-row-reverse">
-    <!-- Right side: Illustration (Hidden on small screens) -->
     <div class="hidden lg:flex lg:w-1/2 bg-indigo-600 items-center justify-center p-12 overflow-hidden relative">
         <div class="absolute inset-0 z-0">
             <svg class="h-full w-full text-indigo-500 opacity-20" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -37,7 +36,6 @@
         </div>
     </div>
 
-    <!-- Left side: Register Form -->
     <div class="w-full lg:w-1/2 flex items-center justify-center p-8 bg-white">
         <div class="w-full max-w-md">
             <div class="text-center mb-8">
@@ -45,7 +43,7 @@
                 <p class="text-slate-500">Start your community experience today</p>
             </div>
 
-            <form action="/register" method="POST" class="space-y-5">
+            <form action="{{ route('auth.submitRegister') }}" method="POST" class="space-y-5">
                @csrf 
                 <div class="w-full">
                     <div>
@@ -74,8 +72,6 @@
                     <input type="password" id="password" name="password" 
                         class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400"
                         placeholder="••••••••">
-                    
-                   
                 </div>
 
                 <div>
@@ -88,14 +84,11 @@
                       @enderror
                 </div>
 
-
                 <button type="submit" 
                     class="w-full py-4 bg-indigo-600 text-white font-bold rounded-xl shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all transform active:scale-[0.98]">
                     Create Account
                 </button>
             </form>
-
-        
         </div>
     </div>
 </div>

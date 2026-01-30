@@ -3,7 +3,6 @@
 @section('title', 'LocalMind - Empowering Communities Through Knowledge')
 
 @section('content')
-<!-- Hero Section -->
 <section class="relative bg-white pt-20 pb-32 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
@@ -28,14 +27,12 @@
                 </div>
                 <div class="mt-12 flex items-center sm:justify-center lg:justify-start space-x-6 grayscale opacity-60">
                     <span class="text-sm font-bold uppercase tracking-widest text-slate-400">Trusted By</span>
-                    <!-- Add small logos or icons here -->
                     <div class="font-bold text-slate-500 italic">CommunityHub</div>
                     <div class="font-bold text-slate-500 italic">NeighborWatch</div>
                 </div>
             </div>
             
             <div class="mt-16 sm:mt-24 lg:mt-0 lg:col-span-6 relative">
-                <!-- Abstract visual representation -->
                 <div class="relative mx-auto w-full max-w-lg">
                     <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
                     <div class="absolute top-0 -right-4 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
@@ -64,7 +61,6 @@
     </div>
 </section>
 
-<!-- Features Section -->
 <section class="py-24 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Why LocalMind?</h2>

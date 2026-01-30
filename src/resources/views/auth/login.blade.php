@@ -4,7 +4,6 @@
 
 @section('content')
 <div class="min-h-[calc(100vh-64px)] flex">
-    <!-- Left: Illustration/Text (Hidden on small screens) -->
     <div class="hidden lg:flex lg:w-1/2 bg-indigo-600 items-center justify-center p-12 overflow-hidden relative">
         <div class="absolute inset-0 z-0">
             <svg class="h-full w-full text-indigo-500 opacity-20" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -27,7 +26,6 @@
         </div>
     </div>
 
-    <!-- Right: Login Form -->
     <div class="w-full lg:w-1/2 flex items-center justify-center p-8 bg-white">
         <div class="w-full max-w-md">
             <div class="text-center mb-8">
@@ -35,13 +33,11 @@
                 <p class="text-slate-500">Enter your credentials to access your account</p>
             </div>
 
-            <form action="/login" method="POST" class="space-y-6">
+            <form action="{{ route('auth.submitLogin') }}" method="POST" class="space-y-6">
                 @csrf
 
                 @error('email')
-
-                <p class="text-red-600 font-small text-center"> {{  $message }} </p>
-
+                <p class="text-red-600 font-small text-center">{{ $message }}</p>
                 @enderror
 
                 <div>
@@ -70,13 +66,7 @@
                     class="w-full py-4 bg-indigo-600 text-white font-bold rounded-xl shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all transform active:scale-[0.98]">
                     Sign In
                 </button>
-                
-
-
-
             </form>
-
- 
         </div>
     </div>
 </div>

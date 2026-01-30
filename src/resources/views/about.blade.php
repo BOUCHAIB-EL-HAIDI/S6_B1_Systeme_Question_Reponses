@@ -31,7 +31,6 @@
                 </div>
             </div>
             <div class="bg-slate-100 rounded-3xl aspect-square flex items-center justify-center p-8 overflow-hidden relative">
-                <!-- Abstract mission visual -->
                 <div class="w-full h-full bg-indigo-200/50 rounded-2xl flex flex-col items-center justify-center space-y-4">
                     <div class="w-2/3 h-8 bg-indigo-300 rounded-full animate-pulse"></div>
                     <div class="w-1/2 h-8 bg-indigo-300/60 rounded-full animate-pulse"></div>
@@ -48,7 +47,6 @@
                     Get Started for Free
                 </a>
             </div>
-            <!-- Background detail -->
             <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-indigo-500 rounded-full opacity-20"></div>
             <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-indigo-700 rounded-full opacity-30"></div>
         </div>

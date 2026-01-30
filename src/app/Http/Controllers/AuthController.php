@@ -11,9 +11,12 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function login(){
-
-     return view('auth.login');
-
+        if (Auth::check()) {
+            return Auth::user()->role === 'admin' 
+                ? redirect()->route('admin.dashboard') 
+                : redirect()->route('questions.index');
+        }
+        return view('auth.login');
     }
    public function submitLogin(Request $request){
 
@@ -44,10 +47,13 @@ class AuthController extends Controller
 
    }
 
-   public function register()
-   {
-    return view('auth.register');
-   }
+    public function register()
+    {
+        if (Auth::check()) {
+            return redirect()->route('questions.index');
+        }
+        return view('auth.register');
+    }
   
    public function submitRegister(Request $request ){
 
@@ -66,16 +72,16 @@ class AuthController extends Controller
 
     ]);
 
-    Auth::login($user);
+        Auth::login($user);
 
-     return redirect()->route('auth.login');
+        return redirect()->route('questions.index')->with('success', 'Account created and logged in!');
 
    }
 
       public function logout(){
         Auth::logout();
 
-        return redirect()->route('auth.login');
+           return redirect()->route('login');
     }
 
 

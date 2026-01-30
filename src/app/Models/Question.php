@@ -3,41 +3,31 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory ;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Question extends Model
 {
-    
+    use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'title',
+        'content',
+        'location',
+    ];
 
-use HasFactory;
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
-protected $fillable = [
+    public function responses()
+    {
+        return $this->hasMany(Response::class);
+    }
 
-'user_id',
-'title',
-'content',
-'location',
-];
-
-
-public function user(){
-
-return $this->belongsTo(User::class);
-
-}
-
-public function responses(){
-
-return $this->hasMany(Response::class);
-}
-
-public function favorites(){
-
-return $this->hasMany(Favorite::class);
-
-}
-
-
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
 }

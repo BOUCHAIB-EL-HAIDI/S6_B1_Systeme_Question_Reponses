@@ -6,7 +6,6 @@
 <div class="bg-slate-50 min-h-screen py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row gap-8">
-            <!-- Sidebar / Profile Info -->
             <div class="w-full md:w-80 shrink-0">
                 <div class="bg-white rounded-[2.5rem] shadow-sm border border-slate-100 p-8 text-center sticky top-24">
                     <div class="w-24 h-24 bg-indigo-100 rounded-[2rem] mx-auto mb-6 flex items-center justify-center text-indigo-600 font-bold text-3xl">
@@ -43,7 +42,6 @@
                 </div>
             </div>
 
-            <!-- Main Content Area -->
             <div class="flex-grow space-y-8">
                 <div class="bg-indigo-600 rounded-[2.5rem] p-10 text-white flex justify-between items-center shadow-xl shadow-indigo-100">
                     <div>
@@ -53,7 +51,6 @@
                     <button class="bg-white text-indigo-600 font-bold px-6 py-3 rounded-2xl hover:bg-indigo-50 transition-all shadow-lg">Ask Question</button>
                 </div>
 
-                <!-- Tabs/Listing -->
                 <div class="bg-white rounded-[2.5rem] p-8 border border-slate-100 min-h-[400px]">
                     <div class="flex items-center space-x-8 border-b border-slate-100 mb-8">
                         <button class="pb-4 text-indigo-600 font-bold border-b-2 border-indigo-600">Active Questions</button>
